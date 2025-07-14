@@ -2,7 +2,7 @@
   (:import [java.net URLEncoder URLDecoder]
            [java.text SimpleDateFormat]
            [java.util Calendar TimeZone]
-           [org.apache.commons.lang StringEscapeUtils])
+           [org.apache.commons.lang3 StringEscapeUtils])
   (:require [clojure.string :as clj-str]
             [clojure.tools.string-utils :as conjure-str-utils]))
 
@@ -140,7 +140,7 @@ value is nil, then this function returns nil."}
 (defn
 #^{ :doc "Returns a string to use as an attribute in an html tag." }
   attribute-str [attribute value]
-  (str attribute "=\"" (. StringEscapeUtils escapeHtml value) "\""))
+  (str attribute "=\"" (. StringEscapeUtils escapeHtml4 value) "\""))
 
 (defn
 #^{ :doc "Returns a string of html attributes created from the given attributes map." }

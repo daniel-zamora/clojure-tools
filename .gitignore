@@ -8,3 +8,4 @@ classes
 .pmd
 target/
 .lein-env
+.clj-kondo/
